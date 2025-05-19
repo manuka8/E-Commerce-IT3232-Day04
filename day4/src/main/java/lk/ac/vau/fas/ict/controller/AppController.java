@@ -12,4 +12,11 @@ public class AppController {
 	public String myMessage() {
 		return "Hello SpringBoot";
 	}
+	
+	@GetMapping("/name")
+	public String myName() {
+		return "My name is Spring Boot";
+	}
+	
+	
 }
