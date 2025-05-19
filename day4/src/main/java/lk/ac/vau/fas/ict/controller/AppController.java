@@ -8,5 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/app")
 public class AppController {
-
+	@GetMapping("/msg")
+	public String myMessage() {
+		return "Hello SpringBoot";
+	}
 }
