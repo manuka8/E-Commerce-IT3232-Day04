@@ -1,85 +1,80 @@
+# Spring Boot REST API Project
 
+## Overview
 
-**SPRING BOOT STARTER - "Kickstart your REST API journey with Spring Boot!"**
+This is a simple Spring Boot application that demonstrates basic REST API functionality with two endpoints that return string messages.
 
-Welcome to a minimal yet powerful Spring Boot application designed to get you up and running with RESTful endpoints in no time. Whether you're a beginner exploring Spring or a pro looking for a quick testbed—this starter project has your back!
+## Project Structure
 
----
+The project contains a single controller class `AppController` with two GET endpoints:
 
-**FEATURES**
+```
+src/main/java/lk/ac/vau/fas/ict/controller/
+└── AppController.java
+```
 
-* Lightweight & easy to understand
-* RESTful API endpoints using Spring Web
-* Zero configuration required
-* Ready for customization and scaling
+## API Endpoints
 
----
+### Base URL
+All endpoints are prefixed with `/app`
 
-**PROJECT STRUCTURE**
+### Available Endpoints
 
-src
-└── main
-├── java
-│   └── lk.ac.vau.fas.ict
-│       └── controller
-│           └── AppController.java
-└── resources
-└── application.properties
+1. **Message Endpoint**
+   - `GET /app/msg`
+   - Response: `"Hello SpringBoot"`
 
----
+2. **Name Endpoint**
+   - `GET /app/name`
+   - Response: `"My name is Spring Boot"`
 
-**HOW TO RUN**
+## Prerequisites
 
-**Prerequisites:**
+- Java JDK 11 or later
+- Maven 3.6.0 or later
+- IDE (IntelliJ IDEA, Eclipse, or VS Code recommended)
 
-* Java 17 or later
-* Maven 3.x
-* IDE (IntelliJ, Eclipse) or terminal access
+## Running the Application
 
-**Run the App using Maven:**
-./mvnw spring-boot\:run
+1. Clone the repository (if applicable)
+2. Build the project:
+   ```bash
+   mvn clean install
+   ```
+3. Run the application:
+   ```bash
+   mvn spring-boot:run
+   ```
 
-Or run it from your IDE using the main application class.
+The application will start on port 8080 by default.
 
----
+## Accessing the Endpoints
 
-**AVAILABLE ENDPOINTS**
+Once the application is running, you can access the endpoints at:
+- http://localhost:8080/app/msg
+- http://localhost:8080/app/name
 
-GET    /app/msg    - Returns a greeting message ("Hello SpringBoot")
-GET    /app/name   - Returns the name of the app ("My name is Spring Boot")
+## Testing
 
-Test using your browser or tools like Postman or curl:
-curl [http://localhost:8080/app/msg](http://localhost:8080/app/msg)
-curl [http://localhost:8080/app/name](http://localhost:8080/app/name)
+You can test the endpoints using:
+- Browser
+- curl:
+  ```bash
+  curl http://localhost:8080/app/msg
+  curl http://localhost:8080/app/name
+  ```
+- Postman or any API testing tool
 
----
+## Configuration
 
-**CONFIGURATION**
+This basic application doesn't require any special configuration. The default Spring Boot settings are sufficient.
 
-The app runs on port 8080 by default.
-To change the port, edit the `application.properties` file:
+## Dependencies
 
-server.port=9090
-
----
-
-**DEPENDENCIES (pom.xml)**
-
-<dependencies>  
-    <dependency>  
-        <groupId>org.springframework.boot</groupId>  
-        <artifactId>spring-boot-starter-web</artifactId>  
-    </dependency>  
-</dependencies>
-
----
-
-**WHAT’S NEXT?**
-
-* Add more endpoints and controllers
-* Connect to a database (e.g., MySQL, PostgreSQL)
-* Add Swagger/OpenAPI for API documentation
-* Package as a Docker container
-
----
-
+The project uses standard Spring Boot Starter Web dependency:
+```xml
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-web</artifactId>
+</dependency>
+```
